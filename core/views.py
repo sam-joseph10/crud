@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class Signup(View):
     def get(self,request):
-        return render(request,'core/Signup.html')
+        return render(request,'core/SignUp.html')
 
     def post(self,request):         
         if request.method=='POST':
@@ -22,11 +22,11 @@ class Signup(View):
             
             print(uname,email,pass1)
             return redirect('login')  
-        return render(request,'core/Signup.html')
+        return render(request,'core/SignUp.html')
 
 class Login(View):
     def get(self,request):
-        return render(request,'core/Signup.html')
+        return render(request,'core/SignUp.html')
 
     def post(self,request):         
         if request.method=='POST':
@@ -38,7 +38,7 @@ class Login(View):
                 return redirect('home')
             else:
                 return HttpResponse("Entered Credentials are not Correct")
-        return render(request,'core/signup.html')          
+        return render(request,'core/SignUp.html')          
                 
     #@login_required(login_url='login')
 class Home(LoginRequiredMixin,View):
