@@ -22,6 +22,7 @@ class Signup(View):
             
             print(uname,email,pass1)
             return redirect('login')  
+        return render(request,'core/Signup.html')
 
 class Login(View):
     def get(self,request):
